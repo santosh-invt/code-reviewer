@@ -17,6 +17,6 @@ jobs:
         uses: santosh-invt/ai-code-reviewer@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: "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"
+          OPENAI_API_KEY: "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"
           OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
           exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
