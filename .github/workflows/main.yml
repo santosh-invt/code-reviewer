@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: AI Code Reviewer
-        uses: santosh-invt/code-reviewer@main
+        uses: freeedcom/ai-codereviewer@v2.6.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
