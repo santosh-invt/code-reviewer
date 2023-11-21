@@ -1,8 +1,10 @@
 exports.allAccess = (req, res) => {
   if(req.body.check) {
     return res.status(200).send('CHECK PASSED');
-  } else
-  res.status(200).send("Public Content.");
+  } else {
+    res.status(200).send("CHECK PASSED");
+  }
+  
 };
 
 exports.userBoard = (req, res) => {
