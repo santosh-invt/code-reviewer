@@ -11,5 +11,6 @@ exports.adminBoard = (req, res) => {
 };
 
 exports.moderatorBoard = (req, res) => {
+  // random comment
   res.status(200).send("Moderator Content.");
 };
