@@ -1,18 +1,22 @@
-name: Code Review
-
-permissions:
-  contents: read
-  pull-requests: write
+name: AI Code Reviewer
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
-
+    types:
+      - opened
+      - synchronize
+permissions: write-all
 jobs:
-  GPT-CODE-REVIEW:
+  review:
     runs-on: ubuntu-latest
     steps:
-      - uses: anc95/ChatGPT-CodeReview@main
-        env:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: AI Code Reviewer
+        uses: santosh-invt/ai-code-reviewer@main
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
+          exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
